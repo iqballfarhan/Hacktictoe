@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HackTicToe ⭕❌</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <h1>⭕ HackTicToe ❌</h1>
+    <br />
+
+    <button onclick="location.href='pages/tictactoe.html'">
+      <strong>Proceed ╰┈➤</strong>
+    </button>
+
+    <div class="decorative element1"></div>
+    <div class="decorative element2"></div>
+    <div class="decorative element3"></div>
+    <div class="decorative element4"></div>
+    <div class="decorative element5"></div>
+    <div class="decorative element6"></div>
+    <div class="element7">
+      <div class="outer-x">
+        <div class="x1"></div>
+        <div class="x2"></div>
+      </div>
+    </div>
+    <div class="element8">
+      <div class="outer-x">
+        <div class="x1"></div>
+        <div class="x2"></div>
+      </div>
+    </div>
+
+    <br />
+
+    <input
+      type="range"
+      id="volumeSlider"
+      min="0"
+      max="1"
+      step="0.01"
+      title="Volume Slider"
+    />
+
+    <h3>v1.2</h3>
+
+    <audio id="player" autoplay loop>
+      <source src="bgm.mp3" type="audio/mp3" />
+      Your browser does not support the audio element.
+    </audio>
+  </body>
+</html>

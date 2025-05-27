@@ -1,0 +1,285 @@
+body {
+  font-family: Futura, Trebuchet MS, Arial, sans-serif;
+  height: 100dvh;
+  margin: 0;
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32' width='32' height='32' fill='none' stroke='rgb(0 0 0 / 0.2)'%3e%3cpath d='M0 .5H31.5V32'/%3e%3c/svg%3e");
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+@media screen and (max-width: 600px) {
+  h3 {
+    font-size: 16px;
+    color: white;
+  }
+}
+
+h3 {
+  z-index: 69;
+}
+
+#volumeSlider {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(255, 255, 255, 0.8);
+  padding: 5px;
+  border-radius: 10px;
+  z-index: 1000;
+  -webkit-appearance: none;
+  appearance: none;
+  width: 150px;
+  height: 8px;
+  border-radius: 5px;
+  background: linear-gradient(to right, #000000, #000000);
+  outline: none;
+  opacity: 0.9;
+  transition: opacity 0.15s ease-in-out;
+}
+
+#volumeSlider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background: #ffffff;
+  cursor: pointer;
+}
+
+#volumeSlider::-moz-range-thumb {
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background: #ffffff;
+  cursor: pointer;
+}
+
+h1 {
+  font-size: 4rem;
+  z-index: 10;
+}
+
+button {
+  display: inline-flex;
+  z-index: 10;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 400;
+  transition: all 0.2s ease-in-out;
+  gap: 8px;
+  position: relative;
+  cursor: pointer;
+  outline: none;
+  border: 2px solid;
+  padding: 10px 16px;
+  color: white;
+  /* background-color: #de1b1b; */
+  background-color: #3300ff;
+  border-color: black;
+  box-shadow: 4px 4px 0px rgba(0, 0, 0);
+}
+
+button:hover {
+  transform: translate(4px, 4px);
+  box-shadow: none;
+}
+
+@keyframes randomMove {
+  0% {
+    transform: translate(0, 0) scale(1);
+  }
+  20% {
+    transform: translate(calc(var(--x1) * 1px), calc(var(--y1) * 1px)) scale(1);
+  }
+  40% {
+    transform: translate(calc(var(--x2) * 1px), calc(var(--y2) * 1px)) scale(1);
+  }
+  60% {
+    transform: translate(calc(var(--x3) * 1px), calc(var(--y3) * 1px)) scale(1);
+  }
+  80% {
+    transform: translate(calc(var(--x4) * 1px), calc(var(--y4) * 1px)) scale(1);
+  }
+  100% {
+    transform: translate(0, 0) scale(1);
+  }
+}
+
+.decorative {
+  position: absolute;
+  z-index: 0;
+  box-shadow: 4px 4px 0px 0px rgba(0, 0, 0, 1);
+  border: 2px solid black;
+  transition: transform 0.3s ease-in-out;
+}
+
+.element1 {
+  top: 15%;
+  left: 15%;
+  width: 160px;
+  height: 160px;
+  background-color: #fcd34d;
+  /* border-radius: 8px; */
+  animation: randomMove 10s linear infinite alternate;
+  --x1: 20;
+  --y1: -20;
+  /* --x2: -40; --y2: 40; */
+  --x3: 50;
+  --y3: -50;
+  --x4: -10;
+  --y4: 10;
+}
+
+.element2 {
+  top: 12%;
+  left: 14%;
+  width: 60px;
+  height: 60px;
+  background-color: #9ca3af;
+  rotate: 20deg;
+  /* border-radius: 8px; */
+  /* animation: randomMove 10s ease-in-out infinite alternate; */
+  --x1: 10;
+  --y1: -10;
+  /* --x2: -20; --y2: 20; */
+  --x3: 40;
+  --y3: -40;
+  /* --x4: -30; --y4: 30; */
+}
+
+.element2:hover {
+  transform: scale(1.2) rotate(-20deg);
+}
+
+.element3 {
+  top: 25%;
+  left: 30%;
+  width: 50px;
+  height: 50px;
+  background-color: #facc15;
+  rotate: -30deg;
+  /* border-radius: 8px; */
+  /* animation: randomMove 10s ease infinite alternate; */
+  /* --x1: 15; --y1: -15; */
+  --x2: -30;
+  --y2: 30;
+  /* --x3: 45; --y3: -50; */
+  --x4: -60;
+  --y4: 60;
+}
+
+.element3:hover {
+  transform: scale(1.4) rotate(30deg);
+}
+
+.element4 {
+  top: 50%;
+  left: 20%;
+  width: 75px;
+  height: 75px;
+  background-color: #f472b6;
+  border-radius: 100%;
+  animation: randomMove 10s linear infinite alternate-reverse;
+  --x1: 20;
+  --y1: -20;
+  --x2: -40;
+  --y2: 34;
+  --x3: 25;
+  --y3: -20;
+  --x4: -60;
+  --y4: 60;
+}
+
+.element5 {
+  top: 50%;
+  left: 50%;
+  width: 200px;
+  height: 200px;
+  background-color: #4ade80;
+  border-radius: 100%;
+  animation: randomMove 10s ease-out infinite normal;
+  --x1: 20;
+  --y1: -20;
+  --x2: -40;
+  --y2: 34;
+  --x3: 25;
+  --y3: -20;
+  --x4: -60;
+  --y4: 60;
+}
+
+.element6 {
+  top: 30%;
+  left: 70%;
+  width: 100px;
+  height: 100px;
+  background-color: #60a5fa;
+  border-radius: 100%;
+  /* animation: randomMove 10s ease-out infinite normal;
+  --x1: 20; --y1: -20;
+  --x2: -40; --y2: 34;
+  --x3: 25; --y3: -20;
+  --x4: -60; --y4: 60; */
+}
+
+.element6:hover {
+  transform: scale(1.1) rotate(360deg);
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.element7 {
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  top: 60%;
+  left: 80%;
+  rotate: 30deg;
+}
+
+.outer-x {
+  position: relative;
+  width: inherit;
+  height: inherit;
+  animation: rotate 15s linear infinite;
+}
+
+.outer-x .x1 {
+  width: 100%;
+  top: 50%;
+}
+
+.outer-x .x2 {
+  height: 100%;
+  width: 0px;
+  left: 50%;
+}
+
+.outer-x div {
+  border: 6px solid black;
+  position: absolute;
+}
+
+.element8 {
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  rotate: 30deg;
+}
